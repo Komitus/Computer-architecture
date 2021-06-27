@@ -1,0 +1,50 @@
+Clear
+Store whole
+Input
+Store X
+Input
+Store Y
+Skipcond 800
+Jump end_zero
+
+
+
+loop,    Load X
+         Subt Y
+         Skipcond 800
+         JnS end
+         Store X
+		 Load whole
+         Add one
+         Store whole
+         jump loop 
+
+
+ 
+end, HEX   000 
+	 Add Y
+     Store rest
+     Subt Y
+     Skipcond 0
+     Jump equal 
+     Load whole
+     Output 
+	 Load rest
+     Output
+     Halt
+     
+     
+equal, Load whole
+		add one
+
+end_zero, Output 
+		  Halt
+
+
+
+X, DEC 0
+Y, DEC 0
+one, DEC 1
+whole, DEC 0
+rest, DEC 0
+
